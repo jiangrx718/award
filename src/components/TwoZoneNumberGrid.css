@@ -1,0 +1,243 @@
+/* TwoZoneNumberGrid 组件样式 */
+.two-zone-number-grid {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.two-zone-number-grid__title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.two-zone-number-grid__section {
+  margin-bottom: 2rem;
+}
+
+.two-zone-number-grid__section:last-child {
+  margin-bottom: 0;
+}
+
+.two-zone-number-grid__section-title {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.two-zone-number-grid__container {
+  display: grid;
+  gap: 1.2rem;
+  justify-items: center;
+  align-items: center;
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* 主区样式 */
+.two-zone-number-grid__container--primary {
+  /* 默认网格布局 */
+}
+
+/* 副区样式 */
+.two-zone-number-grid__container--secondary {
+  /* 副区通常数量较少，使用单行布局 */
+  grid-template-columns: repeat(auto-fit, 1fr);
+  max-width: 250px;
+}
+
+/* 不同数量的网格布局 */
+.two-zone-number-grid__container--count-1 {
+  grid-template-columns: 1fr;
+  max-width: 80px;
+}
+
+.two-zone-number-grid__container--count-2 {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 160px;
+}
+
+.two-zone-number-grid__container--count-3 {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 240px;
+}
+
+.two-zone-number-grid__container--count-4 {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 200px;
+}
+
+.two-zone-number-grid__container--count-5 {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 280px;
+}
+
+.two-zone-number-grid__container--count-6 {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 300px;
+}
+
+.two-zone-number-grid__container--count-7,
+.two-zone-number-grid__container--count-8,
+.two-zone-number-grid__container--count-9 {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 300px;
+}
+
+.two-zone-number-grid__container--count-10 {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 380px;
+  gap: 1rem;
+}
+
+/* 超过10个的布局 */
+.two-zone-number-grid__container--count-11,
+.two-zone-number-grid__container--count-12,
+.two-zone-number-grid__container--count-13,
+.two-zone-number-grid__container--count-14,
+.two-zone-number-grid__container--count-15,
+.two-zone-number-grid__container--count-16 {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 400px;
+  gap: 1rem;
+}
+
+/* 移动端适配 */
+@media (max-width: 480px) {
+  .two-zone-number-grid {
+    margin: 1.5rem 0;
+  }
+
+  .two-zone-number-grid__title {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .two-zone-number-grid__section {
+    margin-bottom: 1.5rem;
+  }
+
+  .two-zone-number-grid__section-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .two-zone-number-grid__container {
+    gap: 1rem;
+    padding: 0.5rem;
+    max-width: 100%;
+  }
+
+  .two-zone-number-grid__container--secondary {
+    max-width: 220px;
+  }
+
+  .two-zone-number-grid__container--count-1 {
+    max-width: 70px;
+  }
+
+  .two-zone-number-grid__container--count-2 {
+    max-width: 140px;
+  }
+
+  .two-zone-number-grid__container--count-3 {
+    max-width: 210px;
+  }
+
+  .two-zone-number-grid__container--count-4 {
+    max-width: 180px;
+  }
+
+  .two-zone-number-grid__container--count-5,
+  .two-zone-number-grid__container--count-6 {
+    max-width: 250px;
+  }
+
+  .two-zone-number-grid__container--count-10 {
+    max-width: 320px;
+    gap: 0.8rem;
+  }
+
+  .two-zone-number-grid__container--count-11,
+  .two-zone-number-grid__container--count-12,
+  .two-zone-number-grid__container--count-13,
+  .two-zone-number-grid__container--count-14,
+  .two-zone-number-grid__container--count-15,
+  .two-zone-number-grid__container--count-16 {
+    max-width: 340px;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .two-zone-number-grid__container {
+    gap: 0.8rem;
+  }
+
+  .two-zone-number-grid__container--secondary {
+    max-width: 200px;
+  }
+
+  .two-zone-number-grid__container--count-1 {
+    max-width: 60px;
+  }
+
+  .two-zone-number-grid__container--count-2 {
+    max-width: 120px;
+  }
+
+  .two-zone-number-grid__container--count-3 {
+    max-width: 180px;
+  }
+
+  .two-zone-number-grid__container--count-4 {
+    max-width: 160px;
+  }
+
+  .two-zone-number-grid__container--count-5,
+  .two-zone-number-grid__container--count-6 {
+    max-width: 220px;
+  }
+
+  .two-zone-number-grid__container--count-10 {
+    max-width: 280px;
+  }
+
+  .two-zone-number-grid__container--count-11,
+  .two-zone-number-grid__container--count-12,
+  .two-zone-number-grid__container--count-13,
+  .two-zone-number-grid__container--count-14,
+  .two-zone-number-grid__container--count-15,
+  .two-zone-number-grid__container--count-16 {
+    max-width: 300px;
+  }
+}
+
+/* 横屏模式适配 */
+@media (orientation: landscape) and (max-height: 500px) {
+  .two-zone-number-grid {
+    margin: 1rem 0;
+  }
+
+  .two-zone-number-grid__title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .two-zone-number-grid__section {
+    margin-bottom: 1rem;
+  }
+
+  .two-zone-number-grid__section-title {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .two-zone-number-grid__container {
+    gap: 0.8rem;
+    padding: 0.5rem;
+  }
+}

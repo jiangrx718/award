@@ -1,0 +1,176 @@
+/* NumberGrid 组件样式 */
+.number-grid {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.number-grid__title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.number-grid__container {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: center;
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* 动态网格布局 - 基于数量自动调整 */
+
+/* 1-3个数字：单行布局 */
+.number-grid__container--count-1,
+.number-grid__container--count-2,
+.number-grid__container--count-3 {
+  grid-template-columns: repeat(var(--count, 3), 1fr);
+  max-width: calc(var(--count, 3) * 80px + (var(--count, 3) - 1) * 1.5rem);
+}
+
+/* 4个数字：2x2布局 */
+.number-grid__container--count-4 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  max-width: 220px;
+}
+
+/* 5个数字：上3下2布局 */
+.number-grid__container--count-5 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  max-width: 300px;
+}
+
+.number-grid__container--count-5 > :nth-child(4) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.number-grid__container--count-5 > :nth-child(5) {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* 6个数字：3x2布局 */
+.number-grid__container--count-6 {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 300px;
+}
+
+/* 7-9个数字：3列布局 */
+.number-grid__container--count-7,
+.number-grid__container--count-8,
+.number-grid__container--count-9 {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 300px;
+}
+
+/* 10个及以上：4列布局 */
+.number-grid__container--count-10 {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 400px;
+  gap: 1.2rem;
+}
+
+/* 移动端适配 */
+@media (max-width: 480px) {
+  .number-grid {
+    margin: 1.5rem 0;
+  }
+
+  .number-grid__title {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .number-grid__container {
+    gap: 1rem;
+    max-width: 300px;
+    padding: 0.5rem;
+  }
+
+  .number-grid__container--count-1,
+  .number-grid__container--count-2,
+  .number-grid__container--count-3 {
+    max-width: calc(var(--count, 3) * 70px + (var(--count, 3) - 1) * 1rem);
+  }
+
+  .number-grid__container--count-4 {
+    max-width: 200px;
+  }
+
+  .number-grid__container--count-5,
+  .number-grid__container--count-6 {
+    max-width: 250px;
+  }
+
+  .number-grid__container--count-7,
+  .number-grid__container--count-8,
+  .number-grid__container--count-9 {
+    max-width: 250px;
+  }
+
+  .number-grid__container--count-10 {
+    max-width: 320px;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .number-grid__title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .number-grid__container {
+    gap: 0.8rem;
+    max-width: 260px;
+  }
+
+  .number-grid__container--count-1,
+  .number-grid__container--count-2,
+  .number-grid__container--count-3 {
+    max-width: calc(var(--count, 3) * 60px + (var(--count, 3) - 1) * 0.8rem);
+  }
+
+  .number-grid__container--count-4 {
+    max-width: 180px;
+  }
+
+  .number-grid__container--count-5,
+  .number-grid__container--count-6 {
+    max-width: 220px;
+  }
+
+  .number-grid__container--count-7,
+  .number-grid__container--count-8,
+  .number-grid__container--count-9 {
+    max-width: 220px;
+  }
+
+  .number-grid__container--count-10 {
+    max-width: 280px;
+    gap: 0.8rem;
+  }
+}
+
+/* 横屏模式适配 */
+@media (orientation: landscape) and (max-height: 500px) {
+  .number-grid {
+    margin: 1rem 0;
+  }
+
+  .number-grid__title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .number-grid__container {
+    gap: 1rem;
+  }
+}

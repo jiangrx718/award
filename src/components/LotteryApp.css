@@ -1,0 +1,146 @@
+/* LotteryApp 主组件样式 */
+.lottery-app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 背景装饰 */
+.lottery-app::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.lottery-app__header {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.lottery-app__title {
+  font-size: 2.5rem;
+  color: white;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+.lottery-app__subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  font-weight: 400;
+}
+
+.lottery-app__main {
+  flex: 1;
+  background: white;
+  margin: 1rem;
+  border-radius: 20px 20px 0 0;
+  padding: 2rem 1rem;
+  box-shadow: 0 -5px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  min-height: calc(100vh - 200px);
+}
+
+.lottery-app__footer {
+  text-align: center;
+  padding: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.lottery-app__footer p {
+  margin: 0;
+}
+
+/* 移动端适配 */
+@media (max-width: 480px) {
+  .lottery-app__header {
+    padding: 1.5rem 1rem 0.5rem;
+  }
+
+  .lottery-app__title {
+    font-size: 2rem;
+  }
+
+  .lottery-app__subtitle {
+    font-size: 1rem;
+  }
+
+  .lottery-app__main {
+    margin: 0.5rem;
+    padding: 1.5rem 1rem;
+    border-radius: 15px 15px 0 0;
+    min-height: calc(100vh - 150px);
+  }
+
+  .lottery-app__footer {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .lottery-app__title {
+    font-size: 1.8rem;
+  }
+
+  .lottery-app__main {
+    padding: 1rem 0.8rem;
+  }
+}
+
+/* 横屏模式适配 */
+@media (orientation: landscape) and (max-height: 500px) {
+  .lottery-app__header {
+    padding: 1rem 1rem 0.5rem;
+  }
+
+  .lottery-app__title {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .lottery-app__subtitle {
+    font-size: 0.9rem;
+  }
+
+  .lottery-app__main {
+    margin: 0.5rem;
+    padding: 1rem;
+    min-height: auto;
+    flex: 1;
+  }
+
+  .lottery-app__footer {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* 超大屏幕适配 */
+@media (min-width: 768px) {
+  .lottery-app__main {
+    max-width: 600px;
+    margin: 1rem auto;
+    border-radius: 20px;
+    min-height: auto;
+  }
+}
