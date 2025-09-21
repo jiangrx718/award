@@ -27,6 +27,7 @@
   padding: 2rem 1rem 1rem;
   position: relative;
   z-index: 1;
+  padding-top: 25px !important;
 }
 
 .lottery-app__title {
