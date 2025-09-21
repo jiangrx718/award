@@ -1,0 +1,149 @@
+.custom-range-input {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+
+.custom-range-input__title {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.custom-range-input__description {
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  color: #7f8c8d;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.custom-range-input__zone {
+  margin-bottom: 20px;
+}
+
+.custom-range-input__zone:last-child {
+  margin-bottom: 0;
+}
+
+.custom-range-input__label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #34495e;
+}
+
+.custom-range-input__container {
+  position: relative;
+}
+
+.custom-range-input__input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  background: #fff;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.custom-range-input__input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.custom-range-input__input:disabled {
+  background: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+.custom-range-input__input--error {
+  border-color: #e74c3c;
+}
+
+.custom-range-input__input--error:focus {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.custom-range-input__input::placeholder {
+  color: #adb5bd;
+  font-size: 14px;
+}
+
+.custom-range-input__info {
+  margin-top: 8px;
+  min-height: 20px;
+}
+
+.custom-range-input__current {
+  display: block;
+  font-size: 14px;
+  color: #27ae60;
+  font-weight: 500;
+}
+
+.custom-range-input__error {
+  display: block;
+  font-size: 14px;
+  color: #e74c3c;
+  font-weight: 500;
+}
+
+.custom-range-input__default {
+  display: block;
+  font-size: 14px;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .custom-range-input {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .custom-range-input__title {
+    font-size: 16px;
+  }
+
+  .custom-range-input__description {
+    font-size: 13px;
+  }
+
+  .custom-range-input__input {
+    padding: 10px 12px;
+    font-size: 16px; /* iOS 上避免缩放 */
+  }
+
+  .custom-range-input__input::placeholder {
+    font-size: 13px;
+  }
+
+  .custom-range-input__info {
+    font-size: 13px;
+  }
+}
+
+/* 动画效果 */
+.custom-range-input__zone {
+  transition: all 0.2s ease;
+}
+
+.custom-range-input__input {
+  transition: all 0.2s ease;
+}
+
+.custom-range-input__info > * {
+  transition: all 0.2s ease;
+}

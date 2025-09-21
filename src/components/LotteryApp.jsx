@@ -4,6 +4,7 @@ import TwoZoneNumberGrid from './TwoZoneNumberGrid';
 import ControlPanel from './ControlPanel';
 import LotteryTypeSelector from './LotteryTypeSelector';
 import TwoZoneCountInput from './TwoZoneCountInput';
+import CustomRangeInput from './CustomRangeInput';
 import './LotteryApp.css';
 
 /**
@@ -15,6 +16,8 @@ const LotteryApp = () => {
     lotteryConfig,
     primaryCustomCount,
     secondaryCustomCount,
+    primaryCustomRange,
+    secondaryCustomRange,
     actualPrimaryCount,
     actualSecondaryCount,
     selectedNumbers,
@@ -22,7 +25,9 @@ const LotteryApp = () => {
     pickNumbers,
     changeLotteryType,
     updatePrimaryCustomCount,
-    updateSecondaryCustomCount
+    updateSecondaryCustomCount,
+    updatePrimaryCustomRange,
+    updateSecondaryCustomRange
   } = useRandomNumberPicker();
 
   const handlePickNumbers = () => {
@@ -39,6 +44,14 @@ const LotteryApp = () => {
 
   const handleSecondaryCountChange = (count) => {
     updateSecondaryCustomCount(count);
+  };
+
+  const handlePrimaryRangeChange = (range, numbers, isValid) => {
+    updatePrimaryCustomRange(range, numbers, isValid);
+  };
+
+  const handleSecondaryRangeChange = (range, numbers, isValid) => {
+    updateSecondaryCustomRange(range, numbers, isValid);
   };
 
   return (
@@ -60,6 +73,15 @@ const LotteryApp = () => {
           secondaryValue={secondaryCustomCount}
           onPrimaryChange={handlePrimaryCountChange}
           onSecondaryChange={handleSecondaryCountChange}
+          lotteryConfig={lotteryConfig}
+          disabled={isPickingAnimation}
+        />
+        
+        <CustomRangeInput
+          primaryCustomRange={primaryCustomRange}
+          secondaryCustomRange={secondaryCustomRange}
+          onPrimaryRangeChange={handlePrimaryRangeChange}
+          onSecondaryRangeChange={handleSecondaryRangeChange}
           lotteryConfig={lotteryConfig}
           disabled={isPickingAnimation}
         />

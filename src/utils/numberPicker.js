@@ -153,6 +153,27 @@ export const getNumberPoolByZone = (lotteryTypeId, zone) => {
 };
 
 /**
+ * 解析自定义号码池字符串
+ * @param {string} input - 输入字符串，如 "1,2,3,4,5,6,7,8,10"
+ * @returns {Array<number>} 解析后的数字数组
+ */
+export const parseCustomRange = (input) => {
+  if (!input || input.trim() === '') {
+    return [];
+  }
+  
+  const numbers = input
+    .split(',')
+    .map(str => str.trim())
+    .filter(str => str !== '')
+    .map(str => parseInt(str))
+    .filter(num => !isNaN(num) && num > 0);
+  
+  // 去重并排序
+  return [...new Set(numbers)].sort((a, b) => a - b);
+};
+
+/**
  * 默认数字池（1-50）
  */
 export const DEFAULT_NUMBER_POOL = generateNumberRange(1, 50);
